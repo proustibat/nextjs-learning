@@ -2,12 +2,13 @@ import { ReactElement } from "react";
 import Layout from "../../components/Layout";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
 import Head from "next/head";
-import Image from "next/image";
 import {NextPageWithLayout} from "../_app";
+import {caveat} from "../../fonts";
+
 
 const Home: NextPageWithLayout = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className={`flex min-h-screen flex-col items-center justify-center py-2 ${caveat.variable} font-sans`}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

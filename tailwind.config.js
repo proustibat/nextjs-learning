@@ -1,3 +1,4 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -5,7 +6,11 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-caveat)', ...fontFamily.sans],
+      },
+    },
   },
   plugins: [],
 };

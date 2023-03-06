@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Sidebar, { SIDEBAR_TYPE } from "../components/Sidebar";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import {NextPageWithLayout} from "./_app";
+
 const code = `
 Route (pages)                                                     Size     First Load JS
 ┌ ○ / (364 ms)                                                    28 kB           104 kB

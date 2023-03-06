@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import { NextPageWithLayout } from "../_app";
 import styles from "../../styles/pages-data-fetching.module.css";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
+import {addProductJsonLd} from "../../json-ld/example";
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -15,6 +16,16 @@ const Home: NextPageWithLayout = () => {
           property="og:title"
           content="Next JS - pages and data fetching"
           key="title"
+        />
+        <link
+            rel="canonical"
+            href="https://prstbt-nextjs-learning.vercel.app/pages-data-fetching"
+            key="canonical"
+        />
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={addProductJsonLd()}
+            key="product-jsonld"
         />
       </Head>
       <div className={styles.container}>
