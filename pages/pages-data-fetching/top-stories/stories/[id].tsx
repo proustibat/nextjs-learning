@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import { NextPageWithLayout } from "../../../_app";
-import Layout from "../../../../components/Layout";
-import Head from "next/head";
-import Sidebar, { SIDEBAR_TYPE } from "../../../../components/Sidebar";
-import Link from "next/link";
-import {GetStaticPaths, GetStaticProps} from "next";
+import { ReactElement } from 'react';
+import { NextPageWithLayout } from '../../../_app';
+import Layout from '../../../../components/Layout';
+import Head from 'next/head';
+import Sidebar, { SIDEBAR_TYPE } from '../../../../components/Sidebar';
+import Link from 'next/link';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 type SSGExternalPathsProps = {
   itemId: string;
@@ -52,7 +52,7 @@ const SSGExternalPaths: NextPageWithLayout = ({
         <h1>Those pages are pre-rendered on build</h1>
         <ul>
           {[35037723, 35035100, 35037371, 35031545, 35038061].map((id) => (
-            <li>
+            <li key={id}>
               <Link href={`/pages-data-fetching/top-stories/stories/${id}`}>
                 {id}
               </Link>
@@ -63,7 +63,7 @@ const SSGExternalPaths: NextPageWithLayout = ({
         <h1>Those pages are NOT pre-rendered on build</h1>
         <ul>
           {[35004503, 35025664, 34987658, 34988748, 34998921].map((id) => (
-            <li>
+            <li key={id}>
               <Link href={`/pages-data-fetching/top-stories/stories/${id}`}>
                 {id}
               </Link>
@@ -86,7 +86,7 @@ SSGExternalPaths.getLayout = function getLayout(page: ReactElement) {
 
 // This function gets called at build time
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apiUrl = "https://hacker-news.firebaseio.com/v0";
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
   // const res = await fetch(`${apiUrl}/topstories.json`);
   // const storiesIds = (await res.json()).slice(0, 5);
@@ -103,12 +103,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true };
 };
 
-
 export default SSGExternalPaths;
 
 // This also gets called at build time
-export const getStaticProps: GetStaticProps = async ({params}) => {
-  const apiUrl = "https://hacker-news.firebaseio.com/v0";
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
   // params contains the story `id`.
   const itemId = params.id;

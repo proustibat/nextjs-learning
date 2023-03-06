@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { clsx } from "clsx";
-import styles from "../styles/sidebar.module.css";
+import { ReactNode } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { clsx } from 'clsx';
+import styles from '../styles/sidebar.module.css';
 
 const ActiveLink = ({
   href,
@@ -23,7 +23,7 @@ const ActiveLink = ({
           [styles.active]: router.pathname === (activeHref || href),
         })}
       >
-        {isBackLink ? "← " : ""}
+        {isBackLink ? '← ' : ''}
         {content}
       </div>
     </Link>

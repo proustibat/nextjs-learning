@@ -1,11 +1,11 @@
-import styles from "../styles/sidebar.module.css";
-import ActiveLink from "./ActiveLink";
+import styles from '../styles/sidebar.module.css';
+import ActiveLink from './ActiveLink';
 
 export enum SIDEBAR_TYPE {
-  MAIN = "main",
-  PAGES_DATA_FETCHING = "pages & data fetching",
-  AMP = "amp",
-  TAILWIND = "tailwind",
+  MAIN = 'main',
+  PAGES_DATA_FETCHING = 'pages & data fetching',
+  AMP = 'amp',
+  TAILWIND = 'tailwind',
 }
 
 export type SidebarProps = {
@@ -19,15 +19,15 @@ const Sidebar = ({ type }: SidebarProps) => {
         content = (
           <>
             <ActiveLink
-              href={"/pages-data-fetching"}
+              href={'/pages-data-fetching'}
               content="Pages & data fetching"
             />
             <ActiveLink
-              href={"/pages-data-fetching/ssg-no-data"}
+              href={'/pages-data-fetching/ssg-no-data'}
               content="Static Generation, no data"
             />
             <ActiveLink
-              href={"/pages-data-fetching/ssg-external-content"}
+              href={'/pages-data-fetching/ssg-external-content'}
               content="SSG"
             />
             <ActiveLink
@@ -35,18 +35,18 @@ const Sidebar = ({ type }: SidebarProps) => {
               activeHref="/pages-data-fetching/top-stories/stories/[id]"
               content="SSG + pre-rendering"
             />
-            <ActiveLink href={"/pages-data-fetching/ssr"} content="SSR" />
-            <ActiveLink href={"/pages-data-fetching/isr"} content="ISR" />
-            <ActiveLink href={"/pages-data-fetching/csr"} content="Csr" />
+            <ActiveLink href={'/pages-data-fetching/ssr'} content="SSR" />
+            <ActiveLink href={'/pages-data-fetching/isr'} content="ISR" />
+            <ActiveLink href={'/pages-data-fetching/csr'} content="Csr" />
           </>
         );
         break;
       case SIDEBAR_TYPE.AMP:
         content = (
           <>
-            <ActiveLink href={"/amp"} content="AMP" />
-            <ActiveLink href={"/amp/enabled"} content="Amp-first page" />
-            <ActiveLink href={"/amp/hybrid"} content="Hybrid page" />
+            <ActiveLink href={'/amp'} content="AMP" />
+            <ActiveLink href={'/amp/enabled'} content="Amp-first page" />
+            <ActiveLink href={'/amp/hybrid'} content="Hybrid page" />
           </>
         );
         break;
@@ -70,7 +70,7 @@ const Sidebar = ({ type }: SidebarProps) => {
     return (
       <>
         <ActiveLink
-          href={"/"}
+          href={'/'}
           content="Home"
           isBackLink={type !== SIDEBAR_TYPE.MAIN}
         />

@@ -1,8 +1,8 @@
-import { useState, useEffect, ReactElement } from "react";
-import Layout from "../../components/Layout";
-import { NextPageWithLayout } from "../_app";
-import Head from "next/head";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
+import { useState, useEffect, ReactElement } from 'react';
+import Layout from '../../components/Layout';
+import { NextPageWithLayout } from '../_app';
+import Head from 'next/head';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
 
 const Csr: NextPageWithLayout = () => {
   const [itemId, setItemId] = useState(null);
@@ -11,7 +11,7 @@ const Csr: NextPageWithLayout = () => {
 
   useEffect(() => {
     setLoading(true);
-    const apiUrl = "https://hacker-news.firebaseio.com/v0";
+    const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
     fetch(`${apiUrl}/maxitem.json`)
       .then((res) => res.json())

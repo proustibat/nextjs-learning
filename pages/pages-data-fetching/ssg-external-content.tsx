@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
-import Image from "next/image";
-import Head from "next/head";
-import myPic from "../../public/images/ceil.jpg";
-import Layout from "../../components/Layout";
-import { NextPageWithLayout } from "../_app";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import {GetStaticProps} from "next";
+import { ReactElement } from 'react';
+import Image from 'next/image';
+import Head from 'next/head';
+import myPic from '../../public/images/ceil.jpg';
+import Layout from '../../components/Layout';
+import { NextPageWithLayout } from '../_app';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import { GetStaticProps } from 'next';
 
 type SSGExternalContentProps = {
   itemId: string;
@@ -88,7 +88,7 @@ SSGExternalContent.getLayout = function getLayout(page: ReactElement) {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async (context) => {
-  const apiUrl = "https://hacker-news.firebaseio.com/v0";
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
   const resItemId = await fetch(`${apiUrl}/maxitem.json`);
   const itemId = await resItemId.json();
@@ -103,4 +103,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
-

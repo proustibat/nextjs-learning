@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import Head from "next/head";
-import Layout from "../../components/Layout";
-import { NextPageWithLayout } from "../_app";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import {GetServerSideProps} from "next";
+import { ReactElement } from 'react';
+import Head from 'next/head';
+import Layout from '../../components/Layout';
+import { NextPageWithLayout } from '../_app';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import { GetServerSideProps } from 'next';
 
 type SSRProps = {
   itemId: string;
@@ -60,7 +60,7 @@ SSR.getLayout = function getLayout(page: ReactElement) {
 
 // This gets called on every request
 export const getServerSideProps: GetServerSideProps = async () => {
-  const apiUrl = "https://hacker-news.firebaseio.com/v0";
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
   const resItemId = await fetch(`${apiUrl}/maxitem.json`);
   const itemId = await resItemId.json();

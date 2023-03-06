@@ -1,8 +1,8 @@
-import Head from "next/head";
-import styles from "../styles/layout.module.css";
-import { ReactNode } from "react";
-import { useAmp } from "next/amp";
-import {shadowsIntoLightTwo} from "../fonts";
+import Head from 'next/head';
+import styles from '../styles/layout.module.css';
+import { ReactNode } from 'react';
+import { useAmp } from 'next/amp';
+import { shadowsIntoLightTwo } from '../fonts';
 
 type LayoutProps = {
   children: ReactNode;
@@ -36,16 +36,15 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="google" content="nositelinkssearchbox" />
 
         <link rel="icon" href="/favicon.ico" />
-
       </Head>
-      <main className={[styles.main].join(" ")} >{children}</main>
+      <main className={[styles.main].join(' ')}>{children}</main>
       <style jsx global>{`
-      html {
-        font-family: ${shadowsIntoLightTwo.style.fontFamily};
-      }
-    `}</style>
+        html {
+          font-family: ${shadowsIntoLightTwo.style.fontFamily};
+        }
+      `}</style>
     </>
   );
-}
+};
 
-export default Layout
+export default Layout;

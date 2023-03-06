@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import Layout from "../../components/Layout";
-import { NextPageWithLayout } from "../_app";
-import Head from "next/head";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import {GetStaticProps} from "next";
+import { ReactElement } from 'react';
+import Layout from '../../components/Layout';
+import { NextPageWithLayout } from '../_app';
+import Head from 'next/head';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import { GetStaticProps } from 'next';
 
 type ISRProps = {
   itemId: string;
@@ -25,7 +25,7 @@ const ISR: NextPageWithLayout = ({ itemId, itemData }: ISRProps) => {
           </a>
         </p>
         <p>
-          Using <code>getStaticProps</code> with <code>revalidate</code>{" "}
+          Using <code>getStaticProps</code> with <code>revalidate</code>{' '}
           property. When a request is made to a page that was pre-rendered at
           build time, it will initially show the cached page. Any requests to
           the page after the initial request and before 10 seconds are also
@@ -65,7 +65,7 @@ ISR.getLayout = function getLayout(page: ReactElement) {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async (context) => {
-  const apiUrl = "https://hacker-news.firebaseio.com/v0";
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0';
 
   const resItemId = await fetch(`${apiUrl}/maxitem.json`);
   const itemId = await resItemId.json();

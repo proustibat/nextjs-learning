@@ -1,12 +1,12 @@
-import { ReactElement } from "react";
-import Layout from "../../components/Layout";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import { useAmp } from "next/amp";
-import Head from "next/head";
-import Image from "next/image";
-import {NextPageWithLayout} from "../_app";
+import { ReactElement } from 'react';
+import Layout from '../../components/Layout';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import { useAmp } from 'next/amp';
+import Head from 'next/head';
+import Image from 'next/image';
+import { NextPageWithLayout } from '../_app';
 
-export const config = { amp: "hybrid" };
+export const config = { amp: 'hybrid' };
 
 const Hybrid: NextPageWithLayout = () => {
   const isAmp = useAmp();

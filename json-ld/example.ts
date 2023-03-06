@@ -1,6 +1,6 @@
 export function addProductJsonLd() {
-    return {
-        __html: `{
+  return {
+    __html: `{
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "Executive Anvil",
@@ -44,5 +44,5 @@ export function addProductJsonLd() {
       }
     }
   `,
-    };
+  };
 }

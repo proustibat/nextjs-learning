@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import Layout from "../../components/Layout";
-import { NextPageWithLayout } from "../_app";
-import styles from "../../styles/pages-data-fetching.module.css";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import {addProductJsonLd} from "../../json-ld/example";
+import { ReactElement } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Layout from '../../components/Layout';
+import { NextPageWithLayout } from '../_app';
+import styles from '../../styles/pages-data-fetching.module.css';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import { addProductJsonLd } from '../../json-ld/example';
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -18,20 +18,20 @@ const Home: NextPageWithLayout = () => {
           key="title"
         />
         <link
-            rel="canonical"
-            href="https://prstbt-nextjs-learning.vercel.app/pages-data-fetching"
-            key="canonical"
+          rel="canonical"
+          href="https://prstbt-nextjs-learning.vercel.app/pages-data-fetching"
+          key="canonical"
         />
         <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={addProductJsonLd()}
-            key="product-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd()}
+          key="product-jsonld"
         />
       </Head>
       <div className={styles.container}>
         <main>
           <h1 className={styles.title}>
-            Pages & Data fetching{" "}
+            Pages & Data fetching{' '}
             <a
               target="_blank"
               href="https://nextjs.org/docs/basic-features/pages"
@@ -44,7 +44,7 @@ const Home: NextPageWithLayout = () => {
               className={styles.card}
               href="/pages-data-fetching/ssg-no-data"
             >
-              {" "}
+              {' '}
               <h3>Static Generation, no data &rarr;</h3>
               <p>
                 By default, generates a single HTML file per page during build
@@ -58,7 +58,7 @@ const Home: NextPageWithLayout = () => {
             >
               <h3>SSG&rarr;</h3>
               <p>
-                Content depends on external data, uses{" "}
+                Content depends on external data, uses{' '}
                 <code>getStaticProps</code>, at build time
               </p>
             </Link>
@@ -69,7 +69,7 @@ const Home: NextPageWithLayout = () => {
             >
               <h3>SSG + pre-rendering &rarr;</h3>
               <p>
-                Page paths depend on external data. Uses{" "}
+                Page paths depend on external data. Uses{' '}
                 <code>getStaticPaths</code> and <code>getStaticProps</code>, at
                 build time.
               </p>

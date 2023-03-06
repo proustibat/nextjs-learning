@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import Head from "next/head";
-import Layout from "../../components/Layout";
+import { ReactElement } from 'react';
+import Head from 'next/head';
+import Layout from '../../components/Layout';
 
-import { NextPageWithLayout } from "../_app";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
+import { NextPageWithLayout } from '../_app';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
 
 const SSG: NextPageWithLayout = () => (
   <>

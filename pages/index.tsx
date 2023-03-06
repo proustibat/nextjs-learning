@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
-import Layout from "../components/Layout";
-import Sidebar, { SIDEBAR_TYPE } from "../components/Sidebar";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import {NextPageWithLayout} from "./_app";
+import { ReactElement } from 'react';
+import Layout from '../components/Layout';
+import Sidebar, { SIDEBAR_TYPE } from '../components/Sidebar';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import { NextPageWithLayout } from './_app';
 
 const code = `
 Route (pages)                                                     Size     First Load JS
@@ -44,9 +44,9 @@ const Home: NextPageWithLayout = () => (
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
+            <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
+                <span key={key} {...getTokenProps({ token, key })} />
               ))}
             </div>
           ))}

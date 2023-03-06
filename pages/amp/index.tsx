@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import Layout from "../../components/Layout";
-import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
-import Head from "next/head";
-import styles from "../../styles/pages-data-fetching.module.css";
-import Link from "next/link";
-import {NextPageWithLayout} from "../_app";
+import { ReactElement } from 'react';
+import Layout from '../../components/Layout';
+import Sidebar, { SIDEBAR_TYPE } from '../../components/Sidebar';
+import Head from 'next/head';
+import styles from '../../styles/pages-data-fetching.module.css';
+import Link from 'next/link';
+import { NextPageWithLayout } from '../_app';
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -25,14 +25,14 @@ const Home: NextPageWithLayout = () => {
             </a>
           </h1>
           <p>
-            See{" "}
+            See{' '}
             <a href="https://amp.dev/documentation/components/websites/amp-carousel">
               amp components documentation
             </a>
           </p>
           <div className={styles.grid}>
             <Link className={styles.card} href="/amp/enabled">
-              {" "}
+              {' '}
               <h3>Enabled &rarr;</h3>
               <p>
                 The page has a user-accessible (optimized) version of the page
@@ -44,8 +44,8 @@ const Home: NextPageWithLayout = () => {
               <h3>Hybrid &rarr;</h3>
               <p>
                 The page uses <code>useAmp</code> to differentiate between
-                modes, it's a React Hook that returns <code>true</code> if the
-                page is using AMP, and <code>false</code> otherwise.
+                modes, it&apos;s a React Hook that returns <code>true</code> if
+                the page is using AMP, and <code>false</code> otherwise.
               </p>
             </Link>
           </div>

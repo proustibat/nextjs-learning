@@ -1,9 +1,9 @@
 .main {
-    display: flex;
-    background-color: white;
-    min-width: 1100px;
+  display: flex;
+  background-color: white;
+  min-width: 1100px;
 }
 
 .main > section {
-    padding: 32px;
+  padding: 32px;
 }
