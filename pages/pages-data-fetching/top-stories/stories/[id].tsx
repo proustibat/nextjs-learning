@@ -4,6 +4,7 @@ import Layout from "../../../../components/Layout";
 import Head from "next/head";
 import Sidebar, { SIDEBAR_TYPE } from "../../../../components/Sidebar";
 import Link from "next/link";
+import {GetStaticPaths, GetStaticProps} from "next";
 
 type SSGExternalPathsProps = {
   itemId: string;
@@ -84,7 +85,7 @@ SSGExternalPaths.getLayout = function getLayout(page: ReactElement) {
 };
 
 // This function gets called at build time
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const apiUrl = "https://hacker-news.firebaseio.com/v0";
 
   // const res = await fetch(`${apiUrl}/topstories.json`);
@@ -100,12 +101,13 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true };
-}
+};
+
 
 export default SSGExternalPaths;
 
 // This also gets called at build time
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const apiUrl = "https://hacker-news.firebaseio.com/v0";
 
   // params contains the story `id`.
@@ -120,4 +122,4 @@ export async function getStaticProps({ params }) {
       itemData,
     },
   };
-}
+};

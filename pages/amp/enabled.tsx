@@ -2,10 +2,11 @@ import { ReactElement } from "react";
 import Layout from "../../components/Layout";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
 import Head from "next/head";
+import {NextPageWithLayout} from "../_app";
 
 export const config = { amp: true };
 
-const Enabled = () => {
+const Enabled: NextPageWithLayout = () => {
   return (
     <>
       <Head>

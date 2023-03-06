@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { NextPageWithLayout } from "../_app";
 import Head from "next/head";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
+import {GetStaticProps} from "next";
 
 type ISRProps = {
   itemId: string;
@@ -63,7 +64,7 @@ ISR.getLayout = function getLayout(page: ReactElement) {
 };
 
 // This function gets called at build time
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (context) => {
   const apiUrl = "https://hacker-news.firebaseio.com/v0";
 
   const resItemId = await fetch(`${apiUrl}/maxitem.json`);
@@ -82,4 +83,4 @@ export async function getStaticProps() {
     // - At most once every 10 seconds
     revalidate: 10, // In seconds
   };
-}
+};

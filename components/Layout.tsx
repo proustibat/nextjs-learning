@@ -7,7 +7,7 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: LayoutProps) {
+const Layout = ({ children }: LayoutProps) => {
   const isAmp = useAmp();
   return (
     <>
@@ -37,3 +37,5 @@ export default function Layout({ children }: LayoutProps) {
     </>
   );
 }
+
+export default Layout

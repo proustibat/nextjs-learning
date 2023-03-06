@@ -3,8 +3,9 @@ import Layout from "../../components/Layout";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
 import Head from "next/head";
 import Image from "next/image";
+import {NextPageWithLayout} from "../_app";
 
-const Home = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>

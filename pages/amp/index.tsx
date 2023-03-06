@@ -4,8 +4,9 @@ import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
 import Head from "next/head";
 import styles from "../../styles/pages-data-fetching.module.css";
 import Link from "next/link";
+import {NextPageWithLayout} from "../_app";
 
-const Home = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>

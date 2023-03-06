@@ -5,6 +5,7 @@ import myPic from "../../public/images/ceil.jpg";
 import Layout from "../../components/Layout";
 import { NextPageWithLayout } from "../_app";
 import Sidebar, { SIDEBAR_TYPE } from "../../components/Sidebar";
+import {GetStaticProps} from "next";
 
 type SSGExternalContentProps = {
   itemId: string;
@@ -86,7 +87,7 @@ SSGExternalContent.getLayout = function getLayout(page: ReactElement) {
 };
 
 // This function gets called at build time
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (context) => {
   const apiUrl = "https://hacker-news.firebaseio.com/v0";
 
   const resItemId = await fetch(`${apiUrl}/maxitem.json`);
@@ -101,4 +102,5 @@ export async function getStaticProps() {
       itemData,
     },
   };
-}
+};
+
